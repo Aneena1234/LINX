@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINX | Heavy Equipment Rental & Construction Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpeg" alt="LINX Logo" class="custom-logo">
+            </div>
+           
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">HOME</a></li>
+                
+                <li><a href="equipment.html" class="nav-link">EQUIPMENT</a></li>
+                <li><a href="services.html" class="nav-link">SERVICES</a></li>
+                <li><a href="about.html" class="nav-link">ABOUT</a></li>
+                <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+            </ul>
+           
+            <div class="nav-right">
+                <button class="cart-icon-btn" id="cartIcon" title="View Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+                <button class="btn-primary" id="inquiryBtn">
+                    <i class="fas fa-phone-alt"></i> Get Quote
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-line-1">Building Tomorrow's <span class="hero-yellow">Infrastructure</span></span>
+                    <span class="hero-line-2">Today</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Premier heavy equipment rental, transportation services, and quality construction materials
+                    for projects of all sizes across the UAE.
+                </p>
+               
+                <!-- Search Bar -->
+                <div class="hero-search-container">
+                    <div class="search-box-wrapper">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="searchInput" placeholder="Search for equipment, materials, or services...">
+                            <button id="searchBtn" class="search-btn">
+                                <i class="fas fa-search"></i> Search
+                            </button>
+                        </div>
+                        <div class="search-suggestions" id="searchSuggestions"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"> <span class="highlight">Categories</span></h2>
+                <p class="section-subtitle">Browse our specialist rental catalog</p>
+                <p class="section-description">
+                    Reliable, well-maintained machines for every phase of your build, organized by the work they do.
+                </p>
+            </div>
+
+            <div class="catalog-grid" id="categoryGrid">
+                <!-- Categories injected by script.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Fleet Section -->
+    <section class="section bg-light" id="fleet">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="highlight">Fleet</span></h2>
+                <p class="section-subtitle">Premium Equipment & Materials</p>
+                <p class="section-description">
+                    Access our extensive fleet of well-maintained equipment and quality materials.
+                </p>
+                <a href="equipment.html" class="btn-outline">
+                    <i class="fas fa-eye"></i> View All Equipment
+                </a>
+            </div>
+
+            <div class="fleet-grid">
+                <!-- Truck Card -->
+                <div class="fleet-card">
+                    <div class="fleet-badge">Transport</div>
+                    <div class="fleet-image">
+                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Heavy Duty Trucks">
+                    </div>
+                    <div class="fleet-content">
+                        <h3>Heavy Duty Trucks</h3>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> 40+ Ton Capacity</li>
+                            <li><i class="fas fa-check"></i> GPS Tracked</li>
+                            <li><i class="fas fa-check"></i> 24/7 Available</li>
+                        </ul>
+                        <div class="fleet-actions">
+                            <a href="equipment.html?filter=dump-truck" class="btn-view">
+                                <i class="fas fa-info-circle"></i> View Details
+                            </a>
+                            <button class="btn-enquire" onclick="enquire('trucks')">
+                                <i class="fas fa-envelope"></i> Enquire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Excavator Card -->
+                <div class="fleet-card">
+                    <div class="fleet-badge">Equipment</div>
+                    <div class="fleet-image">
+                        <img src="loader.png" alt="Excavators & Loaders">
+                    </div>
+                    <div class="fleet-content">
+                        <h3>Excavators & Loaders</h3>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> Various Sizes</li>
+                            <li><i class="fas fa-check"></i> Operators Included</li>
+                            <li><i class="fas fa-check"></i> Well Maintained</li>
+                        </ul>
+                        <div class="fleet-actions">
+                            <a href="equipment.html?filter=excavator" class="btn-view">
+                                <i class="fas fa-info-circle"></i> View Details
+                            </a>
+                            <button class="btn-enquire" onclick="enquire('excavators')">
+                                <i class="fas fa-envelope"></i> Enquire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Materials Card -->
+                <div class="fleet-card">
+                    <div class="fleet-badge">Materials</div>
+                    <div class="fleet-image">
+                        <img src="https://media.istockphoto.com/id/540755544/photo/development-of-rock.jpg?s=612x612&w=0&k=20&c=eQq_6h7A7yo-J-kdixd75FArn5wfjuyRn63haj8FR7E=" alt="Construction Materials">
+                    </div>
+                    <div class="fleet-content">
+                        <h3>Construction Materials</h3>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> Gutch Sand</li>
+                            <li><i class="fas fa-check"></i> Gravel & Aggregate</li>
+                            <li><i class="fas fa-check"></i> Bulk Delivery</li>
+                        </ul>
+                        <div class="fleet-actions">
+                            <a href="services.html" class="btn-view">
+                                <i class="fas fa-info-circle"></i> View Details
+                            </a>
+                            <button class="btn-enquire" onclick="enquire('materials')">
+                                <i class="fas fa-envelope"></i> Enquire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section" id="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose <span class="highlight">LINX</span></h2>
+                <p class="section-subtitle">Your Reliable Partner for Every Project</p>
+            </div>
+
+            <div class="why-choose-container">
+                <div class="why-choose-content">
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <h4>19+ Years Experience</h4>
+                            <p>Nearly two decades of industry expertise in heavy equipment and transportation</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-truck"></i>
+                            <h4>150+ Modern Vehicles</h4>
+                            <p>Extensive and well-maintained fleet ready for any project</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-headset"></i>
+                            <h4>24/7 Customer Support</h4>
+                            <p>Round-the-clock assistance available for all your needs</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-tag"></i>
+                            <h4>Competitive Pricing</h4>
+                            <p>Best value for your investment with transparent pricing</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Licensed & Insured</h4>
+                            <p>Fully certified and protected operations for peace of mind</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <h4>On-Time Delivery</h4>
+                            <p>Guaranteed timely service delivery to keep your project on schedule</p>
+                        </div>
+                    </div>
+                   
+                    <div class="why-choose-cta">
+                        <a href="about.html" class="btn-primary btn-large">
+                            <i class="fas fa-info-circle"></i> Learn More About Us
+                        </a>
+                    </div>
+                </div>
+               
+                <div class="why-choose-image">
+                    <img src="company.png" alt="Construction Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Get in touch with our team today for a free consultation and competitive quote.</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary btn-large" id="ctaQuoteBtn">
+                        <i class="fas fa-file-invoice"></i> Request a Quote
+                    </button>
+                    <a href="contact.html" class="btn-outline btn-large">
+                        <i class="fas fa-phone-alt"></i> Call Us Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-about">
+                    <h3 class="footer-logo">LINX</h3>
+                    <p class="footer-tagline">General Transporting and Contracting</p>
+                    <p class="footer-description">
+                        Your trusted partner for heavy equipment rental, transportation, and construction
+                        materials across the Gulf region.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="equipment.html">Equipment</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services.html">Heavy Equipment Rental</a></li>
+                        <li><a href="services.html">Transportation Services</a></li>
+                        <li><a href="services.html">Road Materials Supply</a></li>
+                        <li><a href="services.html">Waste Water Transport</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>M44,Musaffah,Abu Dhabi</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+971 50 832 5721</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>infolinxtransport@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Sat - Thu: 8:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 LINX General Transporting and Contracting. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inquiry Modal -->
+    <div class="modal" id="inquiryModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h2><i class="fas fa-file-invoice"></i> Request a Quote</h2>
+            <form id="quickInquiryForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <select id="serviceSelect" required>
+                        <option value="" disabled selected>Select Service Required</option>
+                        <option>Heavy Equipment Rental</option>
+                        <option>Transportation Services</option>
+                        <option>Road Materials Supply</option>
+                        <option>Waste Water Transport</option>
+                        <option>Multiple Services</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Project Details & Requirements" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-paper-plane"></i> Submit Quote Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content cart-modal-content">
+            <button class="modal-close" id="cartClose">&times;</button>
+            <h2><i class="fas fa-shopping-cart"></i> Rental Cart</h2>
+            <div id="cartContent"></div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: <span id="cartTotal">AED 0.00</span></strong>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn-outline" onclick="rentalCart.closeCart()">
+                        <i class="fas fa-arrow-left"></i> Continue Shopping
+                    </button>
+                    <button class="btn-primary" onclick="checkout()">
+                        <i class="fas fa-check"></i> Proceed to Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+    <script src="contact-widget.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Enhanced enquire function for fleet section
+        function enquire(type) {
+            const equipmentNames = {
+                trucks: 'Heavy Duty Trucks',
+                excavators: 'Excavators & Loaders',
+                materials: 'Construction Materials'
+            };
+           
+            const equipmentName = equipmentNames[type] || 'Equipment';
+            const inquiryModal = document.getElementById('inquiryModal');
+            const serviceSelect = document.getElementById('serviceSelect');
+            
+            if (inquiryModal && serviceSelect) {
+                // Save original options
+                const originalHTML = serviceSelect.innerHTML;
+                
+                // Create new options with the equipment pre-selected
+                serviceSelect.innerHTML = `
+                    <option value="" disabled>Select Service Required</option>
+                    <option value="${equipmentName}" selected>${equipmentName}</option>
+                    <option value="Heavy Equipment Rental">Heavy Equipment Rental</option>
+                    <option value="Transportation Services">Transportation Services</option>
+                    <option value="Road Materials Supply">Road Materials Supply</option>
+                    <option value="Waste Water Transport">Waste Water Transport</option>
+                    <option value="Multiple Services">Multiple Services</option>
+                `;
+                
+                // Store the original HTML to restore later
+                serviceSelect.dataset.original = originalHTML;
+                
+                // Open the modal
+                inquiryModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                
+                // Focus on the first input field
+                const firstInput = inquiryModal.querySelector('input');
+                if (firstInput) {
+                    setTimeout(() => firstInput.focus(), 100);
+                }
+            }
+        }
+
+        // Restore original select options when modal closes
+        document.getElementById('modalClose').addEventListener('click', function() {
+            const serviceSelect = document.getElementById('serviceSelect');
+            if (serviceSelect && serviceSelect.dataset.original) {
+                serviceSelect.innerHTML = serviceSelect.dataset.original;
+            }
+        });
+
+        // Checkout function
+        function checkout() {
+            if (!rentalCart || rentalCart.getItemCount() === 0) {
+                alert('Your cart is empty');
+                return;
+            }
+            alert('Checkout functionality would be implemented here. Cart items:\n\n' + 
+                rentalCart.cart.map(item => `- ${item.name} x${item.quantity} (${item.rentalDays} days)`).join('\n') +
+                `\n\nTotal: AED ${rentalCart.getTotal().toFixed(2)}`);
+        }
+    </script>
+</body>
+</html>

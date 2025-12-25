@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINX | Equipment Catalog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpeg" alt="LINX Logo" class="custom-logo">
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link">HOME</a></li>
+                
+                <li><a href="equipment.html" class="nav-link active">EQUIPMENT</a></li>
+                <li><a href="services.html" class="nav-link">SERVICES</a></li>
+                <li><a href="about.html" class="nav-link">ABOUT</a></li>
+                <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+            </ul>
+            
+            <div class="nav-right">
+                <button class="cart-icon-btn" id="cartIcon" title="View Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+                <button class="btn-primary" id="inquiryBtn">
+                    <i class="fas fa-phone-alt"></i> Get Quote
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-line-1">Explore Our <span class="hero-yellow">Equipment</span></span>
+                    <span class="hero-line-2">Built for Heavy Work</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Browse a complete range of heavy machinery inspired by industry-leading rentals.
+                </p>
+                
+                <div class="hero-search-container">
+                    <div class="search-box-wrapper">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="searchInput" placeholder="Search equipment by type, brand, or feature...">
+                            <button id="searchBtn" class="search-btn">
+                                <i class="fas fa-search"></i> Search
+                            </button>
+                        </div>
+                        <div class="search-suggestions" id="searchSuggestions"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipment Catalog -->
+    <section class="section bg-light" id="equipment">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Equipment <span class="highlight">Catalog</span></h2>
+                <p class="section-subtitle">All machine categories with quick filters</p>
+                <div class="filter-buttons" id="filterButtons">
+                    <!-- Filter buttons injected by equipment.js -->
+                </div>
+                <!-- ADD SEARCH HEADER HERE (NEW CODE) -->
+            <div id="searchResultsHeader" class="search-results-header">
+                <h3>Search Results</h3>
+                <p>Showing results for: <span class="search-query" id="searchQueryDisplay"></span></p>
+                <button class="clear-search" onclick="clearSearch()">
+                    <i class="fas fa-times"></i> Clear Search
+                </button>
+            </div>
+                <p id="equipmentCount" class="equipment-count"></p>
+            </div>
+
+            <div class="vehicles-grid" id="equipmentGrid">
+                <!-- Equipment cards injected by equipment.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Inquiry Modal -->
+    <div class="modal" id="inquiryModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h2><i class="fas fa-file-invoice"></i> Request a Quote</h2>
+            <form id="quickInquiryForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Equipment Name" id="equipmentInterest" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Project Details & Requirements" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-paper-plane"></i> Submit Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content cart-modal-content">
+            <button class="modal-close" id="cartClose">&times;</button>
+            <h2><i class="fas fa-shopping-cart"></i> Rental Cart</h2>
+            <div id="cartContent"></div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: <span id="cartTotal">AED 0.00</span></strong>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn-outline" onclick="rentalCart.closeCart()">
+                        <i class="fas fa-arrow-left"></i> Continue Shopping
+                    </button>
+                    <button class="btn-primary" onclick="checkout()">
+                        <i class="fas fa-check"></i> Proceed to Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+    <script>
+    // Clear search function
+    function clearSearch() {
+        window.location.href = 'equipment.html';
+    }
+    
+    // Show search header if search query exists
+    document.addEventListener('DOMContentLoaded', function() {
+        const params = new URLSearchParams(window.location.search);
+        const searchQuery = params.get('search');
+        const searchHeader = document.getElementById('searchResultsHeader');
+        const searchQueryDisplay = document.getElementById('searchQueryDisplay');
+        
+        if (searchQuery && searchHeader && searchQueryDisplay) {
+            searchHeader.style.display = 'block';
+            searchQueryDisplay.textContent = `"${searchQuery}"`;
+        }
+    });
+</script>
+
+    <script src="cart.js"></script>
+    <script src="contact-widget.js"></script>
+    <script src="script.js"></script>
+    <script src="equipment.js"></script>
+    <script>
+        // Checkout function
+        function checkout() {
+            if (!rentalCart || rentalCart.getItemCount() === 0) {
+                alert('Your cart is empty');
+                return;
+            }
+            alert('Checkout functionality would be implemented here. Cart items:\n\n' + 
+                rentalCart.cart.map(item => `- ${item.name} x${item.quantity} (${item.rentalDays} days)`).join('\n') +
+                `\n\nTotal: AED ${rentalCart.getTotal().toFixed(2)}`);
+        }
+    </script>
+    
+</body>
+</html>
+
+

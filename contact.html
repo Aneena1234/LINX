@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - LINX General Transporting and Contracting</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpeg" alt="LINX Logo" class="custom-logo">
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">HOME</a></li>
+                
+                <li><a href="equipment.html" class="nav-link">EQUIPMENT</a></li>
+                <li><a href="services.html" class="nav-link">SERVICES</a></li>
+                <li><a href="about.html" class="nav-link">ABOUT</a></li>
+                <li><a href="contact.html" class="nav-link active">CONTACT</a></li>
+            </ul>
+            
+           <div class="nav-right">
+                <button class="cart-icon-btn" id="cartIcon" title="View Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+                <button class="btn-primary" id="inquiryBtn">
+                    <i class="fas fa-phone-alt"></i> Get Quote
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Contact Hero -->
+    <section class="page-hero contact-hero">
+        <div class="container">
+            <h1 class="page-hero-title">
+                Contact Us – <span class="highlight">LINX</span>
+            </h1>
+            <p class="page-hero-subtitle">We’re here to help you 24/7.</p>
+        </div>
+    </section>
+
+    <!-- Contact Main -->
+    <section class="section contact-section">
+        <div class="container">
+            <div class="contact-layout">
+                <!-- Left: Contact options + working hours -->
+                <div>
+                    <h2 class="section-title contact-section-title">Talk to Our Team</h2>
+                    <p class="section-subtitle">Choose the best way to reach us</p>
+
+                    <div class="contact-channel-grid">
+                        <a href="tel:+971501234567" class="contact-channel-card" id="contactPhone">
+                            <div class="contact-channel-icon phone">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-channel-content">
+                                <h3>Phone</h3>
+                                <p>Call us for urgent rentals and support.</p>
+                                <span class="contact-channel-meta">+971 50 123 4567</span>
+                            </div>
+                        </a>
+
+                        <a href="https://wa.me/971501234567" class="contact-channel-card" id="contactWhatsapp" target="_blank" rel="noopener">
+                            <div class="contact-channel-icon whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-channel-content">
+                                <h3>WhatsApp</h3>
+                                <p>Chat with our team instantly on WhatsApp.</p>
+                                <span class="contact-channel-meta">24/7 quick responses</span>
+                            </div>
+                        </a>
+
+                        <a href="mailto:info@gulfcontractors.ae" class="contact-channel-card" id="contactEmail">
+                            <div class="contact-channel-icon email">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-channel-content">
+                                <h3>Email</h3>
+                                <p>Share your project details and requirements.</p>
+                                <span class="contact-channel-meta">info@gulfcontractors.ae</span>
+                            </div>
+                        </a>
+
+                        <a href="https://instagram.com" class="contact-channel-card" id="contactInstagram" target="_blank" rel="noopener">
+                            <div class="contact-channel-icon instagram">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div class="contact-channel-content">
+                                <h3>Instagram</h3>
+                                <p>Follow our latest projects and updates.</p>
+                                <span class="contact-channel-meta">@linx</span>
+                            </div>
+                        </a>
+
+                        <a href="https://maps.google.com/?q=Industrial+Area+Dubai+UAE" class="contact-channel-card" id="contactLocation" target="_blank" rel="noopener">
+                            <div class="contact-channel-icon location">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-channel-content">
+                                <h3>Location / Google Maps</h3>
+                                <p>View our yard and office on Google Maps.</p>
+                                <span class="contact-channel-meta">Industrial Area, Dubai, UAE</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="working-hours">
+                        <h3>Working Hours</h3>
+                        <ul class="working-hours-list">
+                            <li>
+                                <span class="day">Monday – Saturday</span>
+                                <span class="time">9:00 AM – 7:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="day">Sunday</span>
+                                <span class="time closed">Closed</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right: Get in touch form -->
+                <div class="contact-form">
+                    <h2 class="contact-form-title">Get in Touch</h2>
+                    <p class="contact-form-subtitle">Send us a quick message and our team will respond within 24 hours.</p>
+
+                    <div id="contactSuccess" class="form-success" aria-live="polite"></div>
+
+                    <form id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="contactName">Full Name *</label>
+                            <input id="contactName" name="name" type="text" placeholder="John Doe" required>
+                            <small class="field-error"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactEmail">Email *</label>
+                            <input id="contactEmail" name="email" type="email" placeholder="john@example.com" required>
+                            <small class="field-error"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactPhone">Phone *</label>
+                            <input id="contactPhoneInput" name="phone" type="tel" placeholder="+971 50 123 4567" required>
+                            <small class="field-error"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactMessage">Message *</label>
+                            <textarea id="contactMessage" name="message" placeholder="Tell us about your project, timeline, and requirements..." rows="5" required></textarea>
+                            <small class="field-error"></small>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        
+                
+                <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-about">
+                    <h3 class="footer-logo">LINX</h3>
+                    <p class="footer-tagline">General Transporting and Contracting</p>
+                    <p class="footer-description">
+                        Your trusted partner for heavy equipment rental, transportation, and construction
+                        materials across the Gulf region.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="equipment.html">Equipment</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services.html">Heavy Equipment Rental</a></li>
+                        <li><a href="services.html">Transportation Services</a></li>
+                        <li><a href="services.html">Road Materials Supply</a></li>
+                        <li><a href="services.html">Waste Water Transport</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>M44,Musaffah,Abu Dhabi</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+971 50 832 5721</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>infolinxtransport@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Sat - Thu: 8:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 LINX General Transporting and Contracting. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content cart-modal-content">
+            <button class="modal-close" id="cartClose">&times;</button>
+            <h2><i class="fas fa-shopping-cart"></i> Rental Cart</h2>
+            <div id="cartContent"></div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: <span id="cartTotal">AED 0.00</span></strong>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn-outline" onclick="rentalCart.closeCart()">
+                        <i class="fas fa-arrow-left"></i> Continue Shopping
+                    </button>
+                    <button class="btn-primary" onclick="checkout()">
+                        <i class="fas fa-check"></i> Proceed to Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+    <script src="contact-widget.js"></script>
+    <script>
+        // Checkout function
+        function checkout() {
+            if (!rentalCart || rentalCart.getItemCount() === 0) {
+                alert('Your cart is empty');
+                return;
+            }
+            alert('Checkout functionality would be implemented here. Cart items:\n\n' + 
+                rentalCart.cart.map(item => `- ${item.name} x${item.quantity} (${item.rentalDays} days)`).join('\n') +
+                `\n\nTotal: AED ${rentalCart.getTotal().toFixed(2)}`);
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Equipment | LINX</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-category="construction-equipment">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="WhatsApp Image 2025-12-03 at 1.14.36 PM.jpeg" alt="LINX Logo" class="custom-logo">
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link">HOME</a></li>
+                <li><a href="index.html#categories" class="nav-link">CATEGORIES</a></li>
+                <li><a href="equipment.html" class="nav-link active">EQUIPMENT</a></li>
+                <li><a href="services.html" class="nav-link">SERVICES</a></li>
+                <li><a href="about.html" class="nav-link">ABOUT</a></li>
+                <li><a href="index.html#contact" class="nav-link">CONTACT</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="btn-primary" id="inquiryBtn">
+                    <i class="fas fa-phone-alt"></i> Get Quote
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-line-1">Construction <span class="hero-yellow">Equipment</span></span>
+                    <span class="hero-line-2">Lift & Grade</span>
+                </h1>
+                <p class="hero-subtitle">Graders, cranes, and telehandlers for site precision and lifting.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light" id="equipment">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Construction <span class="highlight">Equipment</span></h2>
+                <p class="section-subtitle">Specialized machines for grading and lifting</p>
+                <div class="filter-buttons" id="filterButtons"></div>
+                <p id="equipmentCount" class="equipment-count"></p>
+            </div>
+            <div class="vehicles-grid" id="equipmentGrid"></div>
+        </div>
+    </section>
+
+    <div class="modal" id="inquiryModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h2><i class="fas fa-file-invoice"></i> Request a Quote</h2>
+            <form id="quickInquiryForm">
+                <div class="form-group"><input type="text" placeholder="Your Name" required></div>
+                <div class="form-group"><input type="email" placeholder="Your Email" required></div>
+                <div class="form-group"><input type="tel" placeholder="Phone Number" required></div>
+                <div class="form-group"><input type="text" placeholder="Equipment Name" id="equipmentInterest" required></div>
+                <div class="form-group"><textarea placeholder="Project Details & Requirements" rows="3"></textarea></div>
+                <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="contact-widget.js"></script>
+    <script src="script.js"></script>
+    <script src="equipment.js"></script>
+</body>
+</html>

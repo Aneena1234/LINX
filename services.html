@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINX | Our Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpeg" alt="LINX Logo" class="custom-logo">
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link">HOME</a></li>
+                
+                <li><a href="equipment.html" class="nav-link">EQUIPMENT</a></li>
+                <li><a href="services.html" class="nav-link active">SERVICES</a></li>
+                <li><a href="about.html" class="nav-link">ABOUT</a></li>
+                <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+            </ul>
+            
+            <div class="nav-right">
+                <button class="cart-icon-btn" id="cartIcon" title="View Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+                <button class="btn-primary" id="inquiryBtn">
+                    <i class="fas fa-phone-alt"></i> Get Quote
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-line-1">Comprehensive <span class="hero-yellow">Services</span></span>
+                    <span class="hero-line-2">for Construction Excellence</span>
+                </h1>
+                <p class="hero-subtitle">
+                    From equipment rental to transportation solutions – we provide end-to-end services for your construction and logistical needs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Services -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="highlight">Services</span></h2>
+                <p class="section-subtitle">Comprehensive Construction & Transportation Solutions</p>
+                <p class="section-description">
+                    We offer a wide range of services to support your projects from start to finish.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1: Heavy Equipment Rentals -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Heavy Equipment Rentals</h3>
+                        <p>From cranes to forklifts and manlifts, we offer a range of high-performance equipment to suit your project needs.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Cranes & Lifting Equipment</li>
+                            <li><i class="fas fa-check"></i> Forklifts & Manlifts</li>
+                            <li><i class="fas fa-check"></i> Earth Moving Machinery</li>
+                            <li><i class="fas fa-check"></i> Operator Services Available</li>
+                        </ul>
+                        <a href="equipment.html" class="btn-primary" style="margin-top: 20px;">
+                            <i class="fas fa-eye"></i> View Equipment Catalog
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2: Transport Services -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck-moving"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Transport Services</h3>
+                        <p>We provide reliable transportation solutions using our fleet of trucks and tankers, perfect for moving equipment and goods efficiently.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Heavy Duty Trucks</li>
+                            <li><i class="fas fa-check"></i> Tanker Transport</li>
+                            <li><i class="fas fa-check"></i> Equipment Hauling</li>
+                            <li><i class="fas fa-check"></i> GPS Tracked Fleet</li>
+                        </ul>
+                        <button class="btn-primary" onclick="openInquiryModal()" style="margin-top: 20px;">
+                            <i class="fas fa-truck"></i> Inquire Transport
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 3: Vehicle Rentals -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Vehicle Rentals</h3>
+                        <p>Flexible rental options for cars, buses, and other light vehicles with monthly and weekly terms.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Passenger Cars & SUVs</li>
+                            <li><i class="fas fa-check"></i> Minibuses & Coasters</li>
+                            <li><i class="fas fa-check"></i> Monthly/Weekly Rentals</li>
+                            <li><i class="fas fa-check"></i> Full Insurance Coverage</li>
+                        </ul>
+                        <button class="btn-primary" onclick="openInquiryModal()" style="margin-top: 20px;">
+                            <i class="fas fa-car"></i> Rent Vehicles
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 4: Staff Transportation -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Staff Transportation</h3>
+                        <p>Safe and comfortable transportation solutions to ensure smooth movement of your team to and from job sites.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Daily Staff Pickup/Drop</li>
+                            <li><i class="fas fa-check"></i> Shift-Based Transport</li>
+                            <li><i class="fas fa-check"></i> AC Comfort Vehicles</li>
+                            <li><i class="fas fa-check"></i> Experienced Drivers</li>
+                        </ul>
+                        <button class="btn-primary" onclick="openInquiryModal()" style="margin-top: 20px;">
+                            <i class="fas fa-user-friends"></i> Arrange Transport
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Details Section -->
+    <section class="section bg-light" id="service-details">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Service <span class="highlight">Details</span></h2>
+                <p class="section-subtitle">Comprehensive Solutions for Your Needs</p>
+            </div>
+
+            <div class="additional-services-grid">
+                <!-- Construction Materials Supply -->
+                <div class="additional-service">
+                    <i class="fas fa-cubes"></i>
+                    <h3>Construction Materials</h3>
+                    <p>Supply of quality construction materials including gutch sand, gravel, aggregates, and road base materials.</p>
+                </div>
+
+                <!-- Waste Water Transport -->
+                <div class="additional-service">
+                    <i class="fas fa-water"></i>
+                    <h3>Waste Water Transport</h3>
+                    <p>Efficient wastewater and sewage transport services for construction sites and industrial facilities.</p>
+                </div>
+
+                <!-- Site Preparation -->
+                <div class="additional-service">
+                    <i class="fas fa-hard-hat"></i>
+                    <h3>Site Preparation</h3>
+                    <p>Complete site clearing, grading, and preparation services for new construction projects.</p>
+                </div>
+
+                <!-- Road Construction -->
+                <div class="additional-service">
+                    <i class="fas fa-road"></i>
+                    <h3>Road Construction</h3>
+                    <p>Specialized equipment and expertise for road building and infrastructure development.</p>
+                </div>
+
+                <!-- Demolition Services -->
+                <div class="additional-service">
+                    <i class="fas fa-building"></i>
+                    <h3>Demolition Services</h3>
+                    <p>Controlled demolition and site clearing with safety as our top priority.</p>
+                </div>
+
+                <!-- Project Management -->
+                <div class="additional-service">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Project Management</h3>
+                    <p>Comprehensive project planning and coordination for construction projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Steps -->
+    <section class="section" id="process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="highlight">Process</span></h2>
+                <p class="section-subtitle">Simple & Efficient Service Delivery</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>Discuss your project requirements and assess the equipment or services needed.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Quotation</h3>
+                    <p>Receive a detailed quote with transparent pricing and service specifications.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Approval</h3>
+                    <p>Review and approve the quotation. We prepare all necessary documentation.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Delivery</h3>
+                    <p>Equipment delivery or service execution as per agreed schedule and terms.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Support</h3>
+                    <p>Ongoing support during rental period or service execution with 24/7 assistance.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Completion</h3>
+                    <p>Service completion, equipment pickup, and final settlement of accounts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Get Started?</h2>
+                <p>Contact us today to discuss your project requirements and get a customized solution.</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary btn-large" onclick="openInquiryModal()">
+                        <i class="fas fa-file-invoice"></i> Request a Quote
+                    </button>
+                    <a href="contact.html" class="btn-outline btn-large">
+                        <i class="fas fa-phone-alt"></i> Call Us Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-about">
+                    <h3 class="footer-logo">LINX</h3>
+                    <p class="footer-tagline">General Transporting and Contracting</p>
+                    <p class="footer-description">
+                        Your trusted partner for heavy equipment rental, transportation, and comprehensive construction services across the Gulf region.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="equipment.html">Equipment</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services.html#services">Heavy Equipment Rental</a></li>
+                        <li><a href="services.html#services">Transport Services</a></li>
+                        <li><a href="services.html#services">Vehicle Rentals</a></li>
+                        <li><a href="services.html#services">Staff Transportation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>M44,Musaffah,Abu Dhabi</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+971 50 832 5721</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>infolinxtransport@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Sat - Thu: 8:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 LINX General Transporting and Contracting. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inquiry Modal -->
+    <div class="modal" id="inquiryModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h2><i class="fas fa-file-invoice"></i> Request a Quote</h2>
+            <form id="quickInquiryForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <select id="serviceSelect" required>
+                        <option value="" disabled selected>Select Service Required</option>
+                        <option>Heavy Equipment Rentals</option>
+                        <option>Transport Services</option>
+                        <option>Vehicle Rentals</option>
+                        <option>Staff Transportation</option>
+                        <option>Construction Materials</option>
+                        <option>Multiple Services</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Project Details & Requirements" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-paper-plane"></i> Submit Quote Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content cart-modal-content">
+            <button class="modal-close" id="cartClose">&times;</button>
+            <h2><i class="fas fa-shopping-cart"></i> Rental Cart</h2>
+            <div id="cartContent"></div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: <span id="cartTotal">AED 0.00</span></strong>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn-outline" onclick="rentalCart.closeCart()">
+                        <i class="fas fa-arrow-left"></i> Continue Shopping
+                    </button>
+                    <button class="btn-primary" onclick="checkout()">
+                        <i class="fas fa-check"></i> Proceed to Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+    <script src="contact-widget.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Function to open inquiry modal
+        function openInquiryModal() {
+            const inquiryModal = document.getElementById('inquiryModal');
+            if (inquiryModal) {
+                inquiryModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Checkout function
+        function checkout() {
+            if (!rentalCart || rentalCart.getItemCount() === 0) {
+                alert('Your cart is empty');
+                return;
+            }
+            alert('Checkout functionality would be implemented here. Cart items:\n\n' + 
+                rentalCart.cart.map(item => `- ${item.name} x${item.quantity} (${item.rentalDays} days)`).join('\n') +
+                `\n\nTotal: AED ${rentalCart.getTotal().toFixed(2)}`);
+        }
+    </script>
+</body>
+</html>
